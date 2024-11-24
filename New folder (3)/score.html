@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+      
+      let score = prompt("enter your score");
+      let grade;
+
+if (score>100) {
+    grade = 'Undefined';
+} else if (score >= 90) {
+    grade = 'A';
+} else if (score >= 80) {
+    grade = 'B';
+} else if (score >= 70) {
+    grade = 'C';
+} else if (score >= 60) {
+    grade = 'D';
+}else{
+    grade = 'F';
+}
+console.log(grade);  
+
+    
+    let feedback;
+
+    switch(grade) {
+    
+    case 'A':
+       feedback = "great job for an A!";
+       console.log(feedback);
+        break;
+
+    case 'B':
+        feedback = "Great job for B!";
+        console.log(feedback);
+         break;
+
+    case 'C':
+        feedback = "Great job for C!";
+        console.log(feedback);
+        break;
+
+    case 'D':
+        feedback = "Great job for D!";
+        console.log(feedback);
+        break; 
+       
+    default:
+        break;
+    }
+    
+    </script>
+</body>
+</html>

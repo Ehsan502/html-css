@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const book = {
+            title: "The Great Gatsby",
+            author: "F. Scott Fitzgerald",
+            year: 1925,
+            available: true,
+
+            borrowBook: function() {
+                if (this.available) {
+                    this.available = false;
+                    console.log(`You borrowed "${this.title}".`);
+                } else {
+                    console.log(`"${this.title}" is unavailable.`);
+                }
+            },
+
+            returnBook: function() {
+                this.available = true;
+                console.log(`Thank you for returning "${this.title}".`);
+            },
+
+            printDetails: function() {
+                console.log(`Title: ${this.title}`);
+                console.log(`Author: ${this.author}`);
+                console.log(`Year: ${this.year}`);
+                console.log(`Available: ${this.available ? "YES" : "NO"}`);
+            }
+        };
+
+        console.log("Book details before borrowing:");
+        book.printDetails();
+
+        book.borrowBook();
+        console.log("\nBook details after borrowing:");
+        book.printDetails();
+
+        book.returnBook();
+        console.log("\nBook details after returning:");
+        book.printDetails();
+    </script>
+</body>
+</html>

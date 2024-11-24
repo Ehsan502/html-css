@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+
+
+    <script>
+        const students = [
+           
+        {name: "Ali",age:32,grade:90},
+        {name: "Asad",age:21,grade:78},
+        {name: "Ahmad",age:17,grade:81},
+        {name: "Anas",age:31,grade:87},
+        {name: "Aslam",age:24,grade:93},
+
+        ];
+
+     function getTopStudents(students) {
+        return students.filter(student => student.grade >= 85);
+    }   
+     function averagGrade(student){
+        const totalGrade = students.reduce((sum,student)=>sum+student.grade,0);
+        return totalGrade/student.length;
+    }
+     const topstudents=getTopStudents(students);
+     const avgGrade = averagGrade(students);
+     
+     console.log("Top student:", topstudents);
+     console.log("Avarage Grade:", avgGrade.toFixed(2));
+    </script>
+</body>
+</html>

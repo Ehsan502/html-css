@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <style>
+        .task {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .highlight {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task List</h1>
+    <ul id="taskList">
+      
+    <li class="task">Task 1</li>
+    <li class="task">Task 2</li>
+    <li class="task">Task 3</li>
+    <li class="task">Task 4</li>
+</ul>
+    <script>
+        const tasks = document.querySelectorAll('.task');
+        tasks.forEach(task => {
+            task.addEventListener('click',() =>{
+                task.classList.toggle('highlight');
+            });
+        });
+    </script>
+
+</body>
+</html>

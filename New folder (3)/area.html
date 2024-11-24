@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+    <script>
+        function calculateArea() {
+            const shape = prompt("Enter the shape type (circle, rectangle, triangle):").toLowerCase();
+            let area;
+
+            switch (shape) {
+                case 'circle':
+                    const radius = parseFloat(prompt("Enter the radius of the circle:"));
+                    if (!isNaN(radius) && radius > 0) {
+                        const pi = 3.14159;
+                        area = pi * Math.pow(radius, 2);
+                        alert(`The area of the circle is: ${area.toFixed(2)}`);
+                    } else {
+                        alert("Please enter a valid positive number for the radius.");
+                    }
+                    break;
+
+                case 'rectangle':
+                    const length = parseFloat(prompt("Enter the length of the rectangle:"));
+                    const width = parseFloat(prompt("Enter the width of the rectangle:"));
+                    if (!isNaN(length) && length > 0 && !isNaN(width) && width > 0) {
+                        area = length * width;
+                        alert(`The area of the rectangle is: ${area.toFixed(2)}`);
+                    } else {
+                        alert("Please enter valid positive numbers for length and width.");
+                    }
+                    break;
+
+                case 'triangle':
+                    const base = parseFloat(prompt("Enter the base of the triangle:"));
+                    const height = parseFloat(prompt("Enter the height of the triangle:"));
+                    if (!isNaN(base) && base > 0 && !isNaN(height) && height > 0) {
+                        area = (base * height) / 2;
+                        alert(`The area of the triangle is: ${area.toFixed(2)}`);
+                    } else {
+                        alert("Please enter valid positive numbers for base and height.");
+                    }
+                    break;
+
+                default:
+                    alert("Invalid shape type. Please enter circle, rectangle, or triangle.");
+                    break;
+            }
+        }
+
+        calculateArea();
+    </script>
+</body>
+</html>

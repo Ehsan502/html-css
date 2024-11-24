@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <style>
+        body {
+
+            transition: background-color 0.3s, color 0.3s;
+            font-family: Arial, sans-serif;
+        }
+         .light {
+            background-color: white;
+            color: black;
+         }
+          .dark {
+            background-color: black;
+            color: black;
+          }
+           .theme-button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            background-color: #4285f4;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 20px 0;
+           }
+           header, footer {
+            text-align: center;
+            padding: 20px;
+           }
+    </style>
+</head>
+
+
+<body class="light">
+    <header>
+        <h1>My portfolio</h1>
+        <button class="theme-button" id="themeToggle">Switch to Dark Theme</button>
+    </header>
+    
+<section>
+    <h2>About Me</h2>
+    <p>Welcome to my portfolio!
+        I am a web developer with a passion for creating interactive and user-friendluy websites.</p>
+</section>
+  
+   <footer><p>&copy; 2024 My portfolio</p></footer>
+ 
+<script>
+    const themeToggleButton = document.getElementById('themeToggle');
+          const body = document.body;
+
+
+     function applyTheme(theme) {
+        if (theme === 'dark') {
+            body.classList.remove('light');
+                    body.classList.add('dark');
+
+
+    themeToggleButton.textContent = 'Switch to Light Theme';
+                   } else {
+    body.classList.remove('dark');
+            body.classList.add('light');
+                   
+    themeToggleButton.textContent = 'Switch to Dark Theme';
+        }
+     }   
+     
+     const savedTheme = localStorage.getItem('theme');
+           if (savedTheme) {
+            applyTheme(savedTheme);
+           }
+    
+    themeToggleButton.addEventListener('click', () => {
+                const currentTheme = body.classList.contains('dark') ? 'dark' : 'light';
+                              const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+
+
+               applyTheme(newTheme);
+               localStorage.setItem('theme, newtheme')               
+    });
+</script>
+</body>
+</html>
